@@ -1,0 +1,1 @@
+// type module nhi likhata to first.mjs likhana pdta and second.mjs
