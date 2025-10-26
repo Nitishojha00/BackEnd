@@ -19,12 +19,14 @@ app.get('/books',(req,res)=>{
       res.send(bookstore);
 })
 
+
 app.get('/book/:id',(req,res)=>{
       let id = Number(req.params.id);
       const result = bookstore.find(info=>info.id===id);
       res.send(result);
 });
 
+// For adding/creating book
 
 app.post('/addBook',(req,res)=>{
        console.log(req.body);
@@ -32,12 +34,23 @@ app.post('/addBook',(req,res)=>{
        res.send("Book Added");
 });
 
+// For Delete
+
 app.delete('/removeBook/:id',(req,res)=>{
       let id = Number(req.params.id);
-      bookstore = bookstore.filter(book => !(book.id === id))
+      let index = bookstore.findIndex(info=>info.id===id);
+      bookstore.splice(index,1);
       res.send("delete successfully");
 });
 
+//  Just For Update
+app.patch('/patch',(req,res)=>{
+    
+      let id = req.body.id;
+       let book = bookstore.find(info=>info.id===id);
+       book.Author = req.body.Author;
+       res.send("Data Updated");
+});
 
 app.listen(4000,()=>{
     console.log(" Server is running on port 4000");
