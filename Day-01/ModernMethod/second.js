@@ -1,12 +1,11 @@
-function sum(a,b)
+export default function sum(a,b)
     {
         console.log(a+b);
     }
 
-function sub(a,b)
+export function sub(a,b)
     {
         console.log(a-b);
     }
 
 
-  module.exports = {sum,sub};
