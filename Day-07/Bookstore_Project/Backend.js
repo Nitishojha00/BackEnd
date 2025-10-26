@@ -23,7 +23,7 @@ app.get('/book/:id',(req,res)=>{
       let id = Number(req.params.id);
       const result = bookstore.find(info=>info.id===id);
       res.send(result);
-})
+});
 
 
 app.post('/addBook',(req,res)=>{
