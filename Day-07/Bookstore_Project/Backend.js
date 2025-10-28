@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-app.use(express.json());
+app.use(express.json());  // parsing krrha as a middleware use krrha koi bhi file me .json file hoge object bnjayega
 
 let bookstore = [
     {id:1 , "Name":"Nitish" , "Author":"Ojha Ji"},
