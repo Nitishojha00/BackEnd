@@ -60,8 +60,8 @@ app.patch("/updateMenu", middleware, (req, res) => {
 });
 
 // Remove food
-app.delete("/removeMenu", middleware, (req, res) => {
-  const id = Number(req.query.id);
+app.delete("/removeMenu/:id", middleware, (req, res) => {
+  const id = Number(req.params.id);
   if (FoodMenu.has(id)) {
     FoodMenu.delete(id);
     res.status(200).send("Food removed successfully");

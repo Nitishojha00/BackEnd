@@ -1,0 +1,1 @@
+//  Javascript -> Mongoose -> MongoDB -> Database 
