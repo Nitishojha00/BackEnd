@@ -5,6 +5,10 @@ const user = require("./Models/user")
 
 app.use(express.json());
 
+app.get('/',(req,res)=>{
+   res.send("Hello Home Page");
+})
+
 // GET ALL USERS
 app.get('/info', async (req, res) => {
     const ans = await user.find({});
